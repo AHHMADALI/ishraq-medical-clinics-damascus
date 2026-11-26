@@ -1,0 +1,881 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>عيادات إشراق الطبية | رعاية طبية متكاملة في دمشق</title>
+  <meta name="description" content="عيادات إشراق الطبية في دمشق - رعاية طبية متكاملة، كادر طبي متخصص، مخبر وتحاليل، وأحدث أجهزة التشخيص.">
+  
+  <!-- Google Fonts: Cairo & Tajawal -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Cairo', 'Tajawal', 'sans-serif'],
+            tajawal: ['Tajawal', 'sans-serif'],
+          },
+          colors: {
+            emerald: {
+              50: '#ecfdf5',
+              100: '#d1fae5',
+              200: '#a7f3d0',
+              500: '#10b981',
+              600: '#059669',
+              700: '#047857',
+              800: '#065f46',
+              900: '#064e3b',
+            }
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased selection:bg-emerald-600 selection:text-white">
+
+  <!-- Top Info Bar -->
+  <div class="bg-emerald-800 text-emerald-50 text-xs sm:text-sm py-2 px-4 hidden md:block">
+    <div class="max-w-7xl mx-auto flex justify-between items-center">
+      <div class="flex items-center gap-6">
+        <span class="flex items-center gap-2">
+          <i class="fa-solid fa-location-dot text-emerald-300"></i>
+          دمشق، الجمهورية العربية السورية
+        </span>
+        <span class="flex items-center gap-2">
+          <i class="fa-regular fa-clock text-emerald-300"></i>
+          السبت - الخميس: 8:30 صباحاً حتى 3:30 عصراً (الجمعة عطلة)
+        </span>
+      </div>
+      <div>
+        <a href="tel:+96311213355" class="flex items-center gap-2 hover:text-white transition-colors font-semibold">
+          <i class="fa-solid fa-phone-volume text-emerald-300"></i>
+          <span>للاستفسار والحجز:</span>
+          <span dir="ltr" class="tracking-wide">+963 11 213 355</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sticky Top Navbar -->
+  <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-200/80 shadow-sm transition-all">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-20">
+        
+        <!-- Logo & Clinic Name -->
+        <a href="#home" class="flex items-center gap-3 group">
+          <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-emerald-600 to-emerald-700 flex items-center justify-center text-white shadow-md shadow-emerald-600/20 group-hover:scale-105 transition-transform">
+            <i class="fa-solid fa-heart-pulse text-2xl"></i>
+          </div>
+          <div>
+            <span class="block text-xl sm:text-2xl font-extrabold text-slate-900 tracking-tight">عيادات إشراق الطبية</span>
+            <span class="block text-xs font-medium text-emerald-600">رعاية صحية موثوقة • دمشق</span>
+          </div>
+        </a>
+
+        <!-- Desktop Navigation Links -->
+        <nav class="hidden lg:flex items-center gap-8 font-semibold text-slate-600">
+          <a href="#home" class="hover:text-emerald-600 transition-colors py-2">الرئيسية</a>
+          <a href="#services" class="hover:text-emerald-600 transition-colors py-2">خدماتنا</a>
+          <a href="#why-us" class="hover:text-emerald-600 transition-colors py-2">لماذا نحن</a>
+          <a href="#location" class="hover:text-emerald-600 transition-colors py-2">أوقات الدوام والموقع</a>
+          <a href="#booking" class="hover:text-emerald-600 transition-colors py-2">احجز موعدك</a>
+        </nav>
+
+        <!-- Direct Call CTA & Mobile Menu Button -->
+        <div class="flex items-center gap-3">
+          <a href="tel:+96311213355" class="hidden sm:inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white font-bold px-5 py-2.5 rounded-xl shadow-md shadow-emerald-600/20 hover:shadow-lg transition-all transform hover:-translate-y-0.5">
+            <i class="fa-solid fa-phone"></i>
+            <span>اتصل الآن</span>
+          </a>
+
+          <!-- Mobile Hamburger Button -->
+          <button id="mobile-menu-btn" type="button" aria-label="القائمة الرئيسية" class="lg:hidden p-3 rounded-xl text-slate-700 hover:bg-emerald-50 hover:text-emerald-700 focus:outline-none transition-colors">
+            <i id="menu-icon" class="fa-solid fa-bars text-xl"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Navigation Dropdown -->
+    <div id="mobile-menu" class="hidden lg:hidden bg-white border-t border-slate-100 px-4 pt-3 pb-6 shadow-xl">
+      <nav class="flex flex-col space-y-2 font-semibold text-slate-700">
+        <a href="#home" class="mobile-link px-4 py-3 rounded-xl hover:bg-emerald-50 hover:text-emerald-700 transition-colors">الرئيسية</a>
+        <a href="#services" class="mobile-link px-4 py-3 rounded-xl hover:bg-emerald-50 hover:text-emerald-700 transition-colors">خدماتنا</a>
+        <a href="#why-us" class="mobile-link px-4 py-3 rounded-xl hover:bg-emerald-50 hover:text-emerald-700 transition-colors">لماذا نحن</a>
+        <a href="#location" class="mobile-link px-4 py-3 rounded-xl hover:bg-emerald-50 hover:text-emerald-700 transition-colors">أوقات الدوام والموقع</a>
+        <a href="#booking" class="mobile-link px-4 py-3 rounded-xl hover:bg-emerald-50 hover:text-emerald-700 transition-colors">احجز موعدك</a>
+      </nav>
+      <div class="mt-4 pt-4 border-t border-slate-100">
+        <a href="tel:+96311213355" class="w-full flex items-center justify-center gap-2 bg-emerald-600 text-white font-bold py-3.5 rounded-xl shadow-md">
+          <i class="fa-solid fa-phone"></i>
+          <span>اتصل الآن:</span>
+          <span dir="ltr">+963 11 213 355</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="home" class="relative overflow-hidden bg-gradient-to-b from-emerald-50/80 via-white to-slate-50 pt-12 pb-20 lg:pt-20 lg:pb-28">
+    <!-- Subtle Decorative Background Shapes -->
+    <div class="absolute top-0 right-0 -translate-y-12 translate-x-12 w-96 h-96 bg-emerald-100/60 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="absolute bottom-0 left-0 translate-y-12 -translate-x-12 w-80 h-80 bg-teal-100/50 rounded-full blur-3xl pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- Hero Text Content -->
+        <div class="lg:col-span-7 text-center lg:text-right">
+          <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-100/80 text-emerald-800 text-sm font-bold mb-6 border border-emerald-200">
+            <span class="w-2.5 h-2.5 rounded-full bg-emerald-600 animate-pulse"></span>
+            <span>نستقبلكم يومياً ما عدا الجمعة (8:30 ص - 3:30 م)</span>
+          </div>
+
+          <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 leading-tight mb-6">
+            رعاية طبية متكاملة بمعايير حديثة في <span class="text-emerald-600">قلب دمشق</span>
+          </h1>
+
+          <p class="text-base sm:text-lg text-slate-600 font-tajawal leading-relaxed mb-8 max-w-2xl mx-auto lg:mx-0">
+            في <strong class="text-slate-800">عيادات إشراق الطبية</strong>، نضع صحتكم وراحتكم في مقدمة أولوياتنا. نقدم استشارات طبية متخصصة وتشخيصاً دقيقاً بإشراف نخبة من الأطباء، ضمن بيئة طبية معقمة ومريحة تليق بكم وبعائلاتكم.
+          </p>
+
+          <!-- Primary & Secondary CTAs -->
+          <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 mb-10">
+            <a href="#booking" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-base sm:text-lg px-8 py-4 rounded-2xl shadow-lg shadow-emerald-600/25 hover:shadow-xl transition-all transform hover:-translate-y-0.5">
+              <i class="fa-regular fa-calendar-check text-xl"></i>
+              <span>احجز موعدك الآن</span>
+            </a>
+
+            <a href="tel:+96311213355" class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 bg-white hover:bg-emerald-50 text-emerald-700 border-2 border-emerald-600/30 hover:border-emerald-600 font-bold text-base sm:text-lg px-7 py-3.5 rounded-2xl shadow-sm transition-all">
+              <i class="fa-solid fa-phone-flip text-emerald-600"></i>
+              <span>اتصل بنا:</span>
+              <span dir="ltr" class="font-extrabold tracking-wide">+963 11 213 355</span>
+            </a>
+          </div>
+
+          <!-- Trust Badges -->
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-6 border-t border-slate-200/80">
+            <div class="flex items-center justify-center lg:justify-start gap-3">
+              <div class="w-10 h-10 rounded-xl bg-emerald-100 text-emerald-700 flex items-center justify-center shrink-0">
+                <i class="fa-solid fa-user-doctor text-lg"></i>
+              </div>
+              <span class="font-bold text-slate-700 text-sm">كادر طبي متخصص</span>
+            </div>
+            <div class="flex items-center justify-center lg:justify-start gap-3">
+              <div class="w-10 h-10 rounded-xl bg-emerald-100 text-emerald-700 flex items-center justify-center shrink-0">
+                <i class="fa-solid fa-microscope text-lg"></i>
+              </div>
+              <span class="font-bold text-slate-700 text-sm">أجهزة تشخيص حديثة</span>
+            </div>
+            <div class="flex items-center justify-center lg:justify-start gap-3">
+              <div class="w-10 h-10 rounded-xl bg-emerald-100 text-emerald-700 flex items-center justify-center shrink-0">
+                <i class="fa-solid fa-hand-holding-medical text-lg"></i>
+              </div>
+              <span class="font-bold text-slate-700 text-sm">رعاية شاملة</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero Visual Card -->
+        <div class="lg:col-span-5">
+          <div class="relative mx-auto max-w-md lg:max-w-none">
+            <div class="bg-white rounded-3xl p-4 sm:p-6 shadow-xl shadow-slate-200/70 border border-slate-100">
+              <div class="relative rounded-2xl overflow-hidden bg-emerald-900 aspect-[4/3]">
+                <img 
+                  src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=900&q=80" 
+                  alt="عيادات إشراق الطبية في دمشق" 
+                  class="w-full h-full object-cover opacity-90"
+                  onerror="this.onerror=null; this.src='https://placehold.co/800x600/059669/ffffff?text=%D8%B9%D9%8A%D8%A7%D8%AF%D8%A7%D8%AA+%D8%A5%D8%B4%D8%B1%D8%A7%D9%82+%D8%A7%D9%84%D8%B7%D8%A8%D9%8A%D8%A9';"
+                >
+                <div class="absolute inset-0 bg-gradient-to-t from-emerald-950/80 via-transparent to-transparent"></div>
+                <div class="absolute bottom-4 right-4 left-4 text-white">
+                  <p class="text-xs text-emerald-200 font-semibold mb-1">دمشق - رعاية صحية متكاملة</p>
+                  <p class="text-base font-bold">عيادات تخصصية ومخبر متكامل تحت سقف واحد</p>
+                </div>
+              </div>
+
+              <!-- Quick Status Strip inside Hero Card -->
+              <div class="mt-4 bg-emerald-50 rounded-2xl p-4 flex items-center justify-between border border-emerald-100">
+                <div class="flex items-center gap-3">
+                  <div class="w-11 h-11 rounded-xl bg-emerald-600 text-white flex items-center justify-center shrink-0">
+                    <i class="fa-solid fa-phone-volume text-lg"></i>
+                  </div>
+                  <div>
+                    <p class="text-xs text-slate-500 font-semibold">الاستعلامات وحجز المواعيد</p>
+                    <a href="tel:+96311213355" dir="ltr" class="text-base sm:text-lg font-extrabold text-emerald-800 hover:underline">+963 11 213 355</a>
+                  </div>
+                </div>
+                <a href="#booking" class="bg-white text-emerald-700 hover:bg-emerald-600 hover:text-white border border-emerald-200 font-bold text-xs sm:text-sm px-3.5 py-2 rounded-xl transition-colors">
+                  احجز الآن
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Medical Services / Departments Grid -->
+  <section id="services" class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- Section Header -->
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="inline-block px-4 py-1.5 rounded-full bg-emerald-50 text-emerald-700 font-bold text-sm mb-3 border border-emerald-100">
+          تخصصاتنا الطبية
+        </span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-4">
+          خدماتنا وعياداتنا التخصصية
+        </h2>
+        <p class="text-slate-600 font-tajawal text-base sm:text-lg">
+          نقدم باقة متكاملة من الخدمات الطبية والتشخيصية لتلبية احتياجات جميع أفراد الأسرة بدقة واهتمام بالغ.
+        </p>
+      </div>
+
+      <!-- 6 Services Cards -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        
+        <!-- Service 1 -->
+        <div class="group bg-slate-50 hover:bg-white rounded-3xl p-8 border border-slate-100 hover:border-emerald-200 shadow-sm hover:shadow-xl hover:shadow-emerald-900/5 transition-all duration-300 transform hover:-translate-y-1">
+          <div class="w-14 h-14 rounded-2xl bg-emerald-100 text-emerald-700 group-hover:bg-emerald-600 group-hover:text-white flex items-center justify-center text-2xl mb-6 transition-colors">
+            <i class="fa-solid fa-stethoscope"></i>
+          </div>
+          <h3 class="text-xl font-bold text-slate-900 mb-3">العيادة العامة والداخلية</h3>
+          <p class="text-slate-600 font-tajawal leading-relaxed mb-5">
+            تشخيص وعلاج الأمراض الباطنية المزمنة والحادة، متابعة ضغط الدم والسكري، والفحوصات الدورية الشاملة.
+          </p>
+          <a href="#booking" data-dept="العيادة العامة والداخلية" class="select-dept-btn inline-flex items-center gap-2 text-emerald-600 font-bold text-sm group-hover:text-emerald-700">
+            <span>حجز موعد في القسم</span>
+            <i class="fa-solid fa-arrow-left text-xs transition-transform group-hover:-translate-x-1"></i>
+          </a>
+        </div>
+
+        <!-- Service 2 -->
+        <div class="group bg-slate-50 hover:bg-white rounded-3xl p-8 border border-slate-100 hover:border-emerald-200 shadow-sm hover:shadow-xl hover:shadow-emerald-900/5 transition-all duration-300 transform hover:-translate-y-1">
+          <div class="w-14 h-14 rounded-2xl bg-emerald-100 text-emerald-700 group-hover:bg-emerald-600 group-hover:text-white flex items-center justify-center text-2xl mb-6 transition-colors">
+            <i class="fa-solid fa-baby"></i>
+          </div>
+          <h3 class="text-xl font-bold text-slate-900 mb-3">طب الأطفال</h3>
+          <p class="text-slate-600 font-tajawal leading-relaxed mb-5">
+            رعاية صحية متكاملة للرضع والأطفال، متابعة النمو والتغذية، وعلاج أمراض الجهاز التنفسي والهضمي عند الأطفال.
+          </p>
+          <a href="#booking" data-dept="طب الأطفال" class="select-dept-btn inline-flex items-center gap-2 text-emerald-600 font-bold text-sm group-hover:text-emerald-700">
+            <span>حجز موعد في القسم</span>
+            <i class="fa-solid fa-arrow-left text-xs transition-transform group-hover:-translate-x-1"></i>
+          </a>
+        </div>
+
+        <!-- Service 3 -->
+        <div class="group bg-slate-50 hover:bg-white rounded-3xl p-8 border border-slate-100 hover:border-emerald-200 shadow-sm hover:shadow-xl hover:shadow-emerald-900/5 transition-all duration-300 transform hover:-translate-y-1">
+          <div class="w-14 h-14 rounded-2xl bg-emerald-100 text-emerald-700 group-hover:bg-emerald-600 group-hover:text-white flex items-center justify-center text-2xl mb-6 transition-colors">
+            <i class="fa-solid fa-heart-pulse"></i>
+          </div>
+          <h3 class="text-xl font-bold text-slate-900 mb-3">أمراض القلب والأوعية</h3>
+          <p class="text-slate-600 font-tajawal leading-relaxed mb-5">
+            فحص القلب السريري، تخطيط القلب الكهربائي (ECG)، إيكو القلب، والوقاية من أمراض الشرايين وارتفاع التوتر الشرياني.
+          </p>
+          <a href="#booking" data-dept="أمراض القلب والأوعية" class="select-dept-btn inline-flex items-center gap-2 text-emerald-600 font-bold text-sm group-hover:text-emerald-700">
+            <span>حجز موعد في القسم</span>
+            <i class="fa-solid fa-arrow-left text-xs transition-transform group-hover:-translate-x-1"></i>
+          </a>
+        </div>
+
+        <!-- Service 4 -->
+        <div class="group bg-slate-50 hover:bg-white rounded-3xl p-8 border border-slate-100 hover:border-emerald-200 shadow-sm hover:shadow-xl hover:shadow-emerald-900/5 transition-all duration-300 transform hover:-translate-y-1">
+          <div class="w-14 h-14 rounded-2xl bg-emerald-100 text-emerald-700 group-hover:bg-emerald-600 group-hover:text-white flex items-center justify-center text-2xl mb-6 transition-colors">
+            <i class="fa-solid fa-vials"></i>
+          </div>
+          <h3 class="text-xl font-bold text-slate-900 mb-3">المخبر والتحاليل الطبية</h3>
+          <p class="text-slate-600 font-tajawal leading-relaxed mb-5">
+            إجراء كافة التحاليل المخبرية الروتينية والهرمونية والمناعية بدقة عالية وسرعة في تسليم النتائج بإشراف أخصائيين.
+          </p>
+          <a href="#booking" data-dept="المخبر والتحاليل الطبية" class="select-dept-btn inline-flex items-center gap-2 text-emerald-600 font-bold text-sm group-hover:text-emerald-700">
+            <span>حجز موعد في القسم</span>
+            <i class="fa-solid fa-arrow-left text-xs transition-transform group-hover:-translate-x-1"></i>
+          </a>
+        </div>
+
+        <!-- Service 5 -->
+        <div class="group bg-slate-50 hover:bg-white rounded-3xl p-8 border border-slate-100 hover:border-emerald-200 shadow-sm hover:shadow-xl hover:shadow-emerald-900/5 transition-all duration-300 transform hover:-translate-y-1">
+          <div class="w-14 h-14 rounded-2xl bg-emerald-100 text-emerald-700 group-hover:bg-emerald-600 group-hover:text-white flex items-center justify-center text-2xl mb-6 transition-colors">
+            <i class="fa-solid fa-x-ray"></i>
+          </div>
+          <h3 class="text-xl font-bold text-slate-900 mb-3">الأشعة والتشخيص</h3>
+          <p class="text-slate-600 font-tajawal leading-relaxed mb-5">
+            تصوير شعاعي رقمي وتصوير بالأمواج فوق الصوتية (الإيكو) بأحدث الأجهزة لتشخيص دقيق وآمن لمختلف الحالات.
+          </p>
+          <a href="#booking" data-dept="الأشعة والتشخيص" class="select-dept-btn inline-flex items-center gap-2 text-emerald-600 font-bold text-sm group-hover:text-emerald-700">
+            <span>حجز موعد في القسم</span>
+            <i class="fa-solid fa-arrow-left text-xs transition-transform group-hover:-translate-x-1"></i>
+          </a>
+        </div>
+
+        <!-- Service 6 -->
+        <div class="group bg-slate-50 hover:bg-white rounded-3xl p-8 border border-slate-100 hover:border-emerald-200 shadow-sm hover:shadow-xl hover:shadow-emerald-900/5 transition-all duration-300 transform hover:-translate-y-1">
+          <div class="w-14 h-14 rounded-2xl bg-emerald-100 text-emerald-700 group-hover:bg-emerald-600 group-hover:text-white flex items-center justify-center text-2xl mb-6 transition-colors">
+            <i class="fa-solid fa-kit-medical"></i>
+          </div>
+          <h3 class="text-xl font-bold text-slate-900 mb-3">الرعاية الأولية والطوارئ</h3>
+          <p class="text-slate-600 font-tajawal leading-relaxed mb-5">
+            تقديم الإسعافات الأولية، الضماد الطبي، قياس المؤشرات الحيوية، والإرذاذ والعلاجات الوريدية خلال ساعات الدوام.
+          </p>
+          <a href="#booking" data-dept="الرعاية الأولية والطوارئ" class="select-dept-btn inline-flex items-center gap-2 text-emerald-600 font-bold text-sm group-hover:text-emerald-700">
+            <span>حجز موعد في القسم</span>
+            <i class="fa-solid fa-arrow-left text-xs transition-transform group-hover:-translate-x-1"></i>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Choose Us Section -->
+  <section id="why-us" class="py-20 bg-emerald-900 text-white relative overflow-hidden">
+    <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#ffffff_1px,transparent_1px)] [background-size:20px_20px]"></div>
+    
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="inline-block px-4 py-1.5 rounded-full bg-emerald-800 text-emerald-200 font-bold text-sm mb-3 border border-emerald-700">
+          التزامنا بالجودة
+        </span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold mb-4">
+          لماذا تختار عيادات إشراق الطبية؟
+        </h2>
+        <p class="text-emerald-100/90 font-tajawal text-base sm:text-lg">
+          نجمع بين الخبرة الطبية والتنظيم الإداري لنوفر لكم تجربة علاجية مريحة وآمنة في قلب دمشق.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <!-- Feature 1 -->
+        <div class="bg-emerald-800/60 backdrop-blur-sm border border-emerald-700/70 rounded-3xl p-7 hover:bg-emerald-800 transition-colors">
+          <div class="w-12 h-12 rounded-2xl bg-emerald-500/20 text-emerald-300 flex items-center justify-center text-2xl mb-5">
+            <i class="fa-solid fa-bullseye"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-2.5">دقة التشخيص الطبي</h3>
+          <p class="text-emerald-100/80 font-tajawal text-sm leading-relaxed">
+            اعتماد أحدث البروتوكولات الطبية والتجهيزات التشخيصية لضمان خطة علاجية دقيقة وفعّالة لكل مريض.
+          </p>
+        </div>
+
+        <!-- Feature 2 -->
+        <div class="bg-emerald-800/60 backdrop-blur-sm border border-emerald-700/70 rounded-3xl p-7 hover:bg-emerald-800 transition-colors">
+          <div class="w-12 h-12 rounded-2xl bg-emerald-500/20 text-emerald-300 flex items-center justify-center text-2xl mb-5">
+            <i class="fa-solid fa-shield-virus"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-2.5">بيئة معقمة وآمنة</h3>
+          <p class="text-emerald-100/80 font-tajawal text-sm leading-relaxed">
+            تطبيق صارم لمعايير النظافة والتعقيم المستمر لجميع العيادات والأدوات الطبية حفاظاً على سلامة المراجعين.
+          </p>
+        </div>
+
+        <!-- Feature 3 -->
+        <div class="bg-emerald-800/60 backdrop-blur-sm border border-emerald-700/70 rounded-3xl p-7 hover:bg-emerald-800 transition-colors">
+          <div class="w-12 h-12 rounded-2xl bg-emerald-500/20 text-emerald-300 flex items-center justify-center text-2xl mb-5">
+            <i class="fa-solid fa-stopwatch"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-2.5">تنظيم المواعيد وتقليل الانتظار</h3>
+          <p class="text-emerald-100/80 font-tajawal text-sm leading-relaxed">
+            نظام حجز منظم يحترم وقت المريض ويقلل فترات الانتظار، مع إمكانية التأكيد المسبق عبر الهاتف.
+          </p>
+        </div>
+
+        <!-- Feature 4 -->
+        <div class="bg-emerald-800/60 backdrop-blur-sm border border-emerald-700/70 rounded-3xl p-7 hover:bg-emerald-800 transition-colors">
+          <div class="w-12 h-12 rounded-2xl bg-emerald-500/20 text-emerald-300 flex items-center justify-center text-2xl mb-5">
+            <i class="fa-solid fa-users-medical"></i>
+            <i class="fa-solid fa-heart"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-2.5">رعاية عائلية ميسّرة</h3>
+          <p class="text-emerald-100/80 font-tajawal text-sm leading-relaxed">
+            خدمات طبية شاملة لجميع أفراد الأسرة بأسعار مدروسة ومناسبة، مع متابعة إنسانية مستمرة لحالة المريض.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Appointment Request Form Section -->
+  <section id="booking" class="py-20 bg-slate-50">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="bg-white rounded-3xl shadow-xl shadow-slate-200/70 border border-slate-100 overflow-hidden">
+        <div class="grid grid-cols-1 lg:grid-cols-12">
+          
+          <!-- Side Info Banner -->
+          <div class="lg:col-span-5 bg-gradient-to-br from-emerald-600 to-emerald-800 text-white p-8 sm:p-10 flex flex-col justify-between">
+            <div>
+              <span class="inline-block px-3 py-1 rounded-full bg-white/15 text-emerald-50 text-xs font-bold mb-4">
+                حجز إلكتروني سريع
+              </span>
+              <h2 class="text-2xl sm:text-3xl font-extrabold mb-4 leading-snug">
+                احجز موعدك في عيادات إشراق الطبية
+              </h2>
+              <p class="text-emerald-100 font-tajawal text-sm sm:text-base leading-relaxed mb-8">
+                املأ البيانات المطلوبة وسنقوم بتجهيز ملفك الطبي، أو يمكنك الاتصال مباشرة بالاستعلامات لتثبيت الموعد فوراً.
+              </p>
+
+              <div class="space-y-4 text-sm">
+                <div class="flex items-start gap-3">
+                  <i class="fa-regular fa-clock text-emerald-300 text-lg mt-0.5"></i>
+                  <div>
+                    <p class="font-bold">أوقات الدوام الرسمي</p>
+                    <p class="text-emerald-100">يومياً ما عدا الجمعة (8:30 صباحاً – 3:30 عصراً)</p>
+                  </div>
+                </div>
+                <div class="flex items-start gap-3">
+                  <i class="fa-solid fa-location-dot text-emerald-300 text-lg mt-0.5"></i>
+                  <div>
+                    <p class="font-bold">العنوان</p>
+                    <p class="text-emerald-100">دمشق، سوريا</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="mt-10 pt-6 border-t border-white/15">
+              <p class="text-xs text-emerald-200 mb-2">للحجز المباشر عبر الهاتف:</p>
+              <a href="tel:+96311213355" class="inline-flex items-center gap-3 bg-white text-emerald-800 hover:bg-emerald-50 font-extrabold px-5 py-3 rounded-2xl shadow-md transition-colors w-full justify-center">
+                <i class="fa-solid fa-phone"></i>
+                <span dir="ltr" class="text-base">+963 11 213 355</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Form Area -->
+          <div class="lg:col-span-7 p-8 sm:p-10">
+            <form id="appointment-form" class="space-y-5">
+              <div>
+                <label for="patientName" class="block text-sm font-bold text-slate-700 mb-2">
+                  الاسم الكامل <span class="text-red-500">*</span>
+                </label>
+                <input 
+                  type="text" 
+                  id="patientName" 
+                  name="patientName" 
+                  required 
+                  placeholder="أدخل اسم المريض الثلاثي"
+                  class="w-full px-4 py-3.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:border-emerald-600 focus:ring-2 focus:ring-emerald-600/20 outline-none transition-all text-slate-800"
+                >
+              </div>
+
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                <div>
+                  <label for="patientPhone" class="block text-sm font-bold text-slate-700 mb-2">
+                    رقم الهاتف للتواصل <span class="text-red-500">*</span>
+                  </label>
+                  <input 
+                    type="tel" 
+                    id="patientPhone" 
+                    name="patientPhone" 
+                    required 
+                    dir="ltr"
+                    placeholder="09xx xxx xxx"
+                    class="w-full px-4 py-3.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:border-emerald-600 focus:ring-2 focus:ring-emerald-600/20 outline-none transition-all text-slate-800 text-right"
+                  >
+                </div>
+
+                <div>
+                  <label for="department" class="block text-sm font-bold text-slate-700 mb-2">
+                    القسم الطبي المطلوب <span class="text-red-500">*</span>
+                  </label>
+                  <select 
+                    id="department" 
+                    name="department" 
+                    required
+                    class="w-full px-4 py-3.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:border-emerald-600 focus:ring-2 focus:ring-emerald-600/20 outline-none transition-all text-slate-800"
+                  >
+                    <option value="" disabled selected>اختر العيادة أو القسم...</option>
+                    <option value="العيادة العامة والداخلية">العيادة العامة والداخلية</option>
+                    <option value="طب الأطفال">طب الأطفال</option>
+                    <option value="أمراض القلب والأوعية">أمراض القلب والأوعية</option>
+                    <option value="المخبر والتحاليل الطبية">المخبر والتحاليل الطبية</option>
+                    <option value="الأشعة والتشخيص">الأشعة والتشخيص</option>
+                    <option value="الرعاية الأولية والطوارئ">الرعاية الأولية والطوارئ</option>
+                  </select>
+                </div>
+              </div>
+
+              <div>
+                <label for="preferredDate" class="block text-sm font-bold text-slate-700 mb-2">
+                  التاريخ المفضل للمراجعة <span class="text-red-500">*</span>
+                </label>
+                <input 
+                  type="date" 
+                  id="preferredDate" 
+                  name="preferredDate" 
+                  required
+                  class="w-full px-4 py-3.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:border-emerald-600 focus:ring-2 focus:ring-emerald-600/20 outline-none transition-all text-slate-800"
+                >
+                <p id="friday-warning" class="hidden text-xs text-amber-600 font-semibold mt-1.5">
+                  <i class="fa-solid fa-circle-exclamation ml-1"></i>
+                  تنبيه: العيادات مغلقة يوم الجمعة، يرجى اختيار يوم آخر من السبت إلى الخميس.
+                </p>
+              </div>
+
+              <div>
+                <label for="notes" class="block text-sm font-bold text-slate-700 mb-2">
+                  ملاحظات إضافية (اختياري)
+                </label>
+                <textarea 
+                  id="notes" 
+                  name="notes" 
+                  rows="3" 
+                  placeholder="اذكر أي أعراض أو استفسارات أو الوقت المفضل صباحاً/ظهراً..."
+                  class="w-full px-4 py-3 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:border-emerald-600 focus:ring-2 focus:ring-emerald-600/20 outline-none transition-all text-slate-800 resize-none"
+                ></textarea>
+              </div>
+
+              <button 
+                type="submit" 
+                class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-base sm:text-lg py-4 rounded-xl shadow-lg shadow-emerald-600/25 hover:shadow-xl transition-all flex items-center justify-center gap-2 cursor-pointer"
+              >
+                <i class="fa-solid fa-check-circle"></i>
+                <span>إرسال طلب حجز الموعد</span>
+              </button>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Location, Contact & Working Hours Section -->
+  <section id="location" class="py-20 bg-white border-t border-slate-100">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-14">
+        <span class="inline-block px-4 py-1.5 rounded-full bg-emerald-50 text-emerald-700 font-bold text-sm mb-3 border border-emerald-100">
+          تواصل معنا وزُرنا
+        </span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-4">
+          الموقع وأوقات الدوام
+        </h2>
+        <p class="text-slate-600 font-tajawal text-base sm:text-lg">
+          يسرّنا استقبالكم في عيادات إشراق الطبية بدمشق خلال أوقات الدوام الرسمي.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+        
+        <!-- Schedule & Contact Details Card -->
+        <div class="lg:col-span-5 bg-slate-50 rounded-3xl p-8 border border-slate-200/80 flex flex-col justify-between">
+          <div class="space-y-6">
+            
+            <!-- Working Hours Box -->
+            <div class="bg-white rounded-2xl p-6 border border-slate-100 shadow-sm">
+              <div class="flex items-center gap-3 mb-4">
+                <div class="w-10 h-10 rounded-xl bg-emerald-100 text-emerald-700 flex items-center justify-center">
+                  <i class="fa-regular fa-clock text-lg"></i>
+                </div>
+                <h3 class="text-lg font-extrabold text-slate-900">ساعات العمل</h3>
+              </div>
+              <ul class="space-y-3 text-sm sm:text-base">
+                <li class="flex justify-between items-center pb-3 border-b border-slate-100">
+                  <span class="font-bold text-slate-700">السبت - الخميس:</span>
+                  <span class="font-bold text-emerald-700 bg-emerald-50 px-3 py-1 rounded-lg">8:30 صباحاً - 3:30 عصراً</span>
+                </li>
+                <li class="flex justify-between items-center">
+                  <span class="font-bold text-slate-700">الجمعة:</span>
+                  <span class="font-bold text-red-600 bg-red-50 px-3 py-1 rounded-lg">مغلق (عطلة أسبوعية)</span>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Phone Contact Box -->
+            <div class="bg-white rounded-2xl p-6 border border-slate-100 shadow-sm">
+              <div class="flex items-center gap-3 mb-3">
+                <div class="w-10 h-10 rounded-xl bg-emerald-100 text-emerald-700 flex items-center justify-center">
+                  <i class="fa-solid fa-phone text-lg"></i>
+                </div>
+                <h3 class="text-lg font-extrabold text-slate-900">الهاتف المباشر</h3>
+              </div>
+              <p class="text-slate-600 text-sm mb-4 font-tajawal">
+                للاستعلام عن مواعيد الأطباء أو حجز موعد مستعجل يرجى الاتصال على الرقم الأرضي:
+              </p>
+              <a href="tel:+96311213355" class="flex items-center justify-center gap-3 w-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3.5 px-5 rounded-xl shadow-md transition-colors">
+                <i class="fa-solid fa-phone-volume"></i>
+                <span dir="ltr" class="text-lg tracking-wider">+963 11 213 355</span>
+              </a>
+            </div>
+
+            <!-- Address Box -->
+            <div class="bg-white rounded-2xl p-6 border border-slate-100 shadow-sm">
+              <div class="flex items-center gap-3 mb-2">
+                <div class="w-10 h-10 rounded-xl bg-emerald-100 text-emerald-700 flex items-center justify-center">
+                  <i class="fa-solid fa-map-location-dot text-lg"></i>
+                </div>
+                <h3 class="text-lg font-extrabold text-slate-900">الموقع الجغرافي</h3>
+              </div>
+              <p class="text-slate-700 font-semibold text-base pr-13">
+                دمشق، الجمهورية العربية السورية
+              </p>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Embedded Google Map -->
+        <div class="lg:col-span-7 bg-slate-100 rounded-3xl overflow-hidden border border-slate-200/80 shadow-sm min-h-[380px] lg:min-h-full relative">
+          <iframe 
+            title="موقع عيادات إشراق الطبية على الخريطة - دمشق"
+            src="https://maps.google.com/maps?q=عيادات+إشراق+الطبية+دمشق&t=&z=14&ie=UTF8&iwloc=&output=embed" 
+            class="w-full h-full min-h-[380px] border-0"
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Professional Footer -->
+  <footer class="bg-slate-900 text-slate-300 pt-16 pb-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-slate-800">
+        
+        <!-- Brand Column -->
+        <div class="lg:col-span-1">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-10 h-10 rounded-xl bg-emerald-600 flex items-center justify-center text-white">
+              <i class="fa-solid fa-heart-pulse text-xl"></i>
+            </div>
+            <span class="text-xl font-extrabold text-white">عيادات إشراق الطبية</span>
+          </div>
+          <p class="text-slate-400 font-tajawal text-sm leading-relaxed mb-5">
+            مجمع عيادات طبية متكاملة في دمشق، نسعى لتقديم أفضل خدمات الرعاية الصحية والتشخيصية بإشراف نخبة من الأطباء المتخصصين.
+          </p>
+        </div>
+
+        <!-- Quick Links -->
+        <div>
+          <h4 class="text-white font-bold text-base mb-4">روابط سريعة</h4>
+          <ul class="space-y-2.5 text-sm">
+            <li><a href="#home" class="hover:text-emerald-400 transition-colors">الرئيسية</a></li>
+            <li><a href="#services" class="hover:text-emerald-400 transition-colors">خدماتنا وعياداتنا</a></li>
+            <li><a href="#why-us" class="hover:text-emerald-400 transition-colors">لماذا تختارنا</a></li>
+            <li><a href="#location" class="hover:text-emerald-400 transition-colors">أوقات الدوام والموقع</a></li>
+            <li><a href="#booking" class="hover:text-emerald-400 transition-colors">حجز موعد إلكتروني</a></li>
+          </ul>
+        </div>
+
+        <!-- Departments -->
+        <div>
+          <h4 class="text-white font-bold text-base mb-4">الأقسام الطبية</h4>
+          <ul class="space-y-2.5 text-sm text-slate-400">
+            <li>العيادة العامة والداخلية</li>
+            <li>طب الأطفال</li>
+            <li>أمراض القلب والأوعية</li>
+            <li>المخبر والتحاليل الطبية</li>
+            <li>الأشعة والتشخيص</li>
+            <li>الرعاية الأولية والطوارئ</li>
+          </ul>
+        </div>
+
+        <!-- Contact & Hours -->
+        <div>
+          <h4 class="text-white font-bold text-base mb-4">معلومات التواصل</h4>
+          <ul class="space-y-3 text-sm">
+            <li class="flex items-start gap-3">
+              <i class="fa-solid fa-location-dot text-emerald-500 mt-1"></i>
+              <span>دمشق، سوريا</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <i class="fa-solid fa-phone text-emerald-500"></i>
+              <a href="tel:+96311213355" dir="ltr" class="hover:text-emerald-400 font-bold transition-colors">+963 11 213 355</a>
+            </li>
+            <li class="flex items-start gap-3">
+              <i class="fa-regular fa-clock text-emerald-500 mt-1"></i>
+              <span>يومياً ما عدا الجمعة:<br>8:30 صباحاً – 3:30 عصراً</span>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Copyright -->
+      <div class="pt-8 text-center text-sm text-slate-400">
+        <p>© 2026 عيادات إشراق الطبية - دمشق. جميع الحقوق محفوظة.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Interactive Appointment Confirmation Modal -->
+  <div id="confirmation-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-slate-900/60 backdrop-blur-sm">
+    <div class="bg-white rounded-3xl max-w-md w-full p-6 sm:p-8 shadow-2xl border border-slate-100 transform transition-all">
+      <div class="w-16 h-16 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center text-3xl mx-auto mb-5">
+        <i class="fa-solid fa-check"></i>
+      </div>
+      
+      <h3 class="text-2xl font-extrabold text-center text-slate-900 mb-2">
+        تم استلام طلب الموعد بنجاح
+      </h3>
+      <p class="text-center text-slate-600 font-tajawal text-sm mb-6">
+        شكراً لتواصلكم مع <strong>عيادات إشراق الطبية</strong>. فيما يلي ملخص بيانات الحجز الخاص بكم:
+      </p>
+
+      <!-- Summary Box -->
+      <div class="bg-slate-50 rounded-2xl p-4 border border-slate-200/80 space-y-2.5 text-sm mb-6">
+        <div class="flex justify-between">
+          <span class="text-slate-500">اسم المريض:</span>
+          <span id="summary-name" class="font-bold text-slate-800"></span>
+        </div>
+        <div class="flex justify-between">
+          <span class="text-slate-500">رقم الهاتف:</span>
+          <span id="summary-phone" dir="ltr" class="font-bold text-slate-800"></span>
+        </div>
+        <div class="flex justify-between">
+          <span class="text-slate-500">القسم الطبي:</span>
+          <span id="summary-dept" class="font-bold text-emerald-700"></span>
+        </div>
+        <div class="flex justify-between">
+          <span class="text-slate-500">التاريخ المطلوب:</span>
+          <span id="summary-date" class="font-bold text-slate-800"></span>
+        </div>
+        <div id="summary-notes-row" class="hidden pt-2 border-t border-slate-200">
+          <span class="text-slate-500 block mb-1">ملاحظات:</span>
+          <span id="summary-notes" class="text-slate-700 font-tajawal"></span>
+        </div>
+      </div>
+
+      <p class="text-xs text-center text-slate-500 mb-5">
+        لتأكيد الساعة الدقيقة للموعد بشكل فوري، يمكنكم الاتصال مباشرة بالعيادة:
+      </p>
+
+      <div class="flex flex-col sm:flex-row gap-3">
+        <a href="tel:+96311213355" class="flex-1 bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3 px-4 rounded-xl text-center transition-colors flex items-center justify-center gap-2">
+          <i class="fa-solid fa-phone"></i>
+          <span>اتصل لتأكيد الموعد</span>
+        </a>
+        <button id="close-modal-btn" type="button" class="flex-1 bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold py-3 px-4 rounded-xl transition-colors cursor-pointer">
+          إغلاق
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Interactive JavaScript -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // 1. Mobile Hamburger Menu Toggle
+      const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+      const mobileMenu = document.getElementById('mobile-menu');
+      const menuIcon = document.getElementById('menu-icon');
+      const mobileLinks = document.querySelectorAll('.mobile-link');
+
+      mobileMenuBtn.addEventListener('click', () => {
+        const isHidden = mobileMenu.classList.contains('hidden');
+        if (isHidden) {
+          mobileMenu.classList.remove('hidden');
+          menuIcon.classList.remove('fa-bars');
+          menuIcon.classList.add('fa-xmark');
+        } else {
+          mobileMenu.classList.add('hidden');
+          menuIcon.classList.remove('fa-xmark');
+          menuIcon.classList.add('fa-bars');
+        }
+      });
+
+      mobileLinks.forEach(link => {
+        link.addEventListener('click', () => {
+          mobileMenu.classList.add('hidden');
+          menuIcon.classList.remove('fa-xmark');
+          menuIcon.classList.add('fa-bars');
+        });
+      });
+
+      // 2. Pre-select department when clicking "حجز موعد في القسم"
+      const deptButtons = document.querySelectorAll('.select-dept-btn');
+      const departmentSelect = document.getElementById('department');
+
+      deptButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+          const deptName = btn.getAttribute('data-dept');
+          if (deptName && departmentSelect) {
+            departmentSelect.value = deptName;
+          }
+        });
+      });
+
+      // 3. Set Minimum Date to Today & Check for Friday
+      const dateInput = document.getElementById('preferredDate');
+      const fridayWarning = document.getElementById('friday-warning');
+      
+      const today = new Date().toISOString().split('T')[0];
+      dateInput.setAttribute('min', today);
+
+      dateInput.addEventListener('change', () => {
+        if (!dateInput.value) return;
+        const selectedDate = new Date(dateInput.value + 'T00:00:00');
+        // 5 corresponds to Friday in JS getDay()
+        if (selectedDate.getDay() === 5) {
+          fridayWarning.classList.remove('hidden');
+        } else {
+          fridayWarning.classList.add('hidden');
+        }
+      });
+
+      // 4. Appointment Form Submission & Confirmation Modal
+      const form = document.getElementById('appointment-form');
+      const modal = document.getElementById('confirmation-modal');
+      const closeModalBtn = document.getElementById('close-modal-btn');
+
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        const name = document.getElementById('patientName').value.trim();
+        const phone = document.getElementById('patientPhone').value.trim();
+        const dept = document.getElementById('department').value;
+        const dateVal = document.getElementById('preferredDate').value;
+        const notes = document.getElementById('notes').value.trim();
+
+        // Populate Modal Summary
+        document.getElementById('summary-name').textContent = name;
+        document.getElementById('summary-phone').textContent = phone;
+        document.getElementById('summary-dept').textContent = dept;
+        document.getElementById('summary-date').textContent = dateVal;
+
+        const notesRow = document.getElementById('summary-notes-row');
+        if (notes) {
+          document.getElementById('summary-notes').textContent = notes;
+          notesRow.classList.remove('hidden');
+        } else {
+          notesRow.classList.add('hidden');
+        }
+
+        // Show Modal
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+
+        // Reset Form
+        form.reset();
+        fridayWarning.classList.add('hidden');
+      });
+
+      // Close Modal Actions
+      const closeModal = () => {
+        modal.classList.add('hidden');
+        modal.classList.remove('flex');
+      };
+
+      closeModalBtn.addEventListener('click', closeModal);
+      modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+          closeModal();
+        }
+      });
+    });
+  </script>
+</body>
+</html>
